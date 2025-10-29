@@ -60,8 +60,8 @@ const Templates = {
           <span class="error" id="cpfError"></span><br>
           
           <label for="telefone">Telefone:</label>
-          <input type="tel" id="telefone" name="telefone" required pattern="\\$\\d{2}\\$\\s\\d{4,5}-\\d{4}" placeholder="(00) 00000-0000" title="Formato: (00) 00000-0000">
-          <span class="error" id="telefoneError"></span><br>
+   <input type="tel" id="telefone" name="telefone" required pattern="^\\(\\d{2}\\)\\s*\\d{4,5}-\\d{4}$" placeholder="(00) 00000-0000" title="Formato: (00) 00000-0000 ou (00) 0000-0000">
+   <span class="error" id="telefoneError"></span><br>
           
           <label for="data_nascimento">Data de Nascimento:</label>
           <input type="date" id="data_nascimento" name="data_nascimento" required>
