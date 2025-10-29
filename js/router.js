@@ -10,7 +10,10 @@ const Router = {
     const templateKey = Router.routes[hash] || 'home';
     main.innerHTML = Templates[templateKey]();
     
-    // Removido: FormValidation.initContactForm() - formulário não existe mais no home
+    // Inicializar formulário se for cadastro
+    if (templateKey === 'cadastro') {
+      FormValidation.initVolunteerForm();
+    }
   },
   
   init: () => {
