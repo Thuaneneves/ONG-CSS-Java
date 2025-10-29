@@ -10,10 +10,7 @@ const Router = {
     const templateKey = Router.routes[hash] || 'home';
     main.innerHTML = Templates[templateKey]();
     
-    // Re-inicializar validação para formulários na nova rota
-    if (templateKey === 'home') {
-      FormValidation.initContactForm();
-    }
+    // Removido: FormValidation.initContactForm() - formulário não existe mais no home
   },
   
   init: () => {
