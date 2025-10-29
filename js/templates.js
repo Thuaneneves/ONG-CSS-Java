@@ -16,21 +16,6 @@ const Templates = {
         <li><strong>Endereço:</strong> Rua da Solidariedade, 123 - São Paulo, SP - CEP: 01234-567</li>
         <li><strong>Redes Sociais:</strong> Siga-nos no Instagram (@ajudasolidaria) e Facebook (Ajuda Solidária ONG)</li>
       </ul>
-      <form id="contactForm">
-        <label for="name">Nome:</label>
-        <input type="text" id="name" name="name" required>
-        <span class="error" id="nameError"></span><br>
-        
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
-        <span class="error" id="emailError"></span><br>
-        
-        <label for="message">Mensagem:</label>
-        <textarea id="message" name="message" required></textarea>
-        <span class="error" id="messageError"></span><br>
-        
-        <button type="submit">Enviar</button>
-      </form>
     </section>
   `,
   
