@@ -10,6 +10,9 @@ const FormValidation = {
     } else if (rules.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(field.value)) {
       isValid = false;
       errorMessage = 'Email inválido.';
+    } else if (rules.pattern && !new RegExp(rules.pattern).test(field.value)) {
+      isValid = false;
+      errorMessage = field.title || 'Formato inválido.';
     } else if (rules.minLength && field.value.length < rules.minLength) {
       isValid = false;
       errorMessage = `Mínimo de ${rules.minLength} caracteres.`;
@@ -22,13 +25,14 @@ const FormValidation = {
   
   validateForm: (form) => {
     let isFormValid = true;
-    const fields = form.querySelectorAll('input, textarea');
+    const fields = form.querySelectorAll('input, select');
     
     fields.forEach(field => {
       const errorElement = form.querySelector(`#${field.id}Error`);
       const rules = { required: field.hasAttribute('required') };
       if (field.type === 'email') rules.email = true;
-      if (field.name === 'message') rules.minLength = 10;
+      if (field.pattern) rules.pattern = field.pattern;
+      if (field.name === 'nome') rules.minLength = 2;  // Exemplo: mínimo para nome
       
       if (!FormValidation.validateField(field, errorElement, rules)) {
         isFormValid = false;
