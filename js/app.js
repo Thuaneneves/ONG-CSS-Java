@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     Router.init();
   }
   
-  // Extensões para FormValidation (apenas para cadastro.html, já que o formulário foi removido do index.html)
+  // Extensões para FormValidation (apenas para cadastro.html)
   FormValidation.initVolunteerForm = () => {
     const form = document.getElementById('volunteerForm');
     if (form) {
@@ -12,9 +12,15 @@ document.addEventListener('DOMContentLoaded', () => {
         e.preventDefault();
         if (FormValidation.validateForm(form)) {
           const formData = {
-            name: form.volName.value,
-            email: form.volEmail.value,
-            phone: form.volPhone.value,
+            nome: form.nome.value,
+            email: form.email.value,
+            cpf: form.cpf.value,
+            telefone: form.telefone.value,
+            data_nascimento: form.data_nascimento.value,
+            endereco: form.endereco.value,
+            cep: form.cep.value,
+            cidade: form.cidade.value,
+            estado: form.estado.value,
             timestamp: new Date().toISOString()
           };
           FormValidation.saveToLocalStorage(formData, 'volunteers');
@@ -22,12 +28,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
       
-      // Validação em tempo real
-      form.querySelectorAll('input').forEach(field => {
+      // Validação em tempo real para todos os campos
+      form.querySelectorAll('input, select').forEach(field => {
         field.addEventListener('input', () => {
           const errorElement = form.querySelector(`#${field.id}Error`);
           const rules = { required: field.hasAttribute('required') };
           if (field.type === 'email') rules.email = true;
+          if (field.pattern) rules.pattern = field.pattern;
+          if (field.name === 'nome') rules.minLength = 2;
           FormValidation.validateField(field, errorElement, rules);
         });
       });
