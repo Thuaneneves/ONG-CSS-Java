@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     Router.init();
   }
   
-  // Extensões para FormValidation (apenas para cadastro.html)
+  // Extensões para FormValidation (para inicializar formulários específicos)
   FormValidation.initVolunteerForm = () => {
     const form = document.getElementById('volunteerForm');
     if (form) {
@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
   
-  // Inicializar apenas se estiver na página de cadastro
+  // Inicializar apenas se estiver na página de cadastro (redundância para cadastro.html)
   if (window.location.pathname.includes('cadastro.html')) {
     FormValidation.initVolunteerForm();
   }
