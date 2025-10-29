@@ -1,0 +1,25 @@
+.site-header {
+  background-color: #005b99;
+  color: white;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.site-header nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 0;
+  margin: 15px 0 0 0;
+}
+
+.site-header nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.site-header nav a:hover {
+  color: #ffcc00;
+}

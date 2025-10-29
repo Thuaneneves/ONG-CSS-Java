@@ -1,0 +1,80 @@
+.card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-16);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.card img {
+  max-width: 100%;
+  border-radius: 4px;
+  margin-bottom: var(--space-16);
+}
+
+.card h3 {
+  color: var(--color-primary);
+  margin-bottom: var(--space-8);
+}
+
+.card p {
+  flex: 1;
+}
+
+button {
+  background-color: var(--color-secondary);
+  color: white;
+  padding: var(--space-8) var(--space-16);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: var(--font-md);
+  transition: background 0.3s;
+}
+
+button:hover {
+  background-color: var(--color-accent);
+}
+
+button:disabled {
+  background-color: var(--color-neutral-2);
+  cursor: not-allowed;
+}
+
+.badge {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: var(--font-xs);
+  background-color: var(--color-secondary);
+  color: white;
+  margin-right: var(--space-8);
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: var(--space-8);
+  margin-bottom: var(--space-16);
+  border: 1px solid var(--color-neutral-2);
+  border-radius: 4px;
+  font-size: var(--font-md);
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 5px var(--color-accent);
+}
+
+.imagem-container img {
+  width: 150px; 
+  height: auto; 
+  margin-right: 10px; 
+}
