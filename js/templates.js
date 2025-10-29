@@ -20,16 +20,24 @@ const Templates = {
   `,
   
   projetos: () => `
-    <section>
-      <h2>Projetos Sociais</h2>
-      <p>Aqui estão alguns dos nossos projetos em andamento:</p>
-      <ul>
-        <li><strong>Alimentação para Todos:</strong> Distribuição de cestas básicas em comunidades carentes.</li>
-        <li><strong>Educação Inclusiva:</strong> Aulas gratuitas e materiais escolares para crianças.</li>
-        <li><strong>Saúde Comunitária:</strong> Campanhas de vacinação e cuidados médicos móveis.</li>
-      </ul>
-      <img src="images/logo.jpg" alt="Projetos em ação" width="300" height="300">
-    </section>
+    <main class="container" style="margin-top:10px; display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:24px; align-items: stretch;">
+      <section class="card">
+        <h2>Nossos Projetos Sociais</h2>
+        <img src="images/voluntariado.jpg" alt="Voluntários em ação ajudando a comunidade" width="200" height="250">
+        <p>Junte-se a nós como voluntário! Oferecemos oportunidades em diversas áreas, como arrecadação de doações, eventos comunitários e apoio direto às famílias. Não é necessário experiência prévia – apenas disposição para ajudar. Cadastre-se na página de cadastro para começar.</p>
+      </section>
+      <section class="card">
+        <h2>Como Doar</h2>
+        <img src="images/doacao.png" alt="Caixas de doação e itens arrecadados" width="200" height="250">
+        <p>Sua doação transforma vidas. Você pode contribuir de várias formas:</p>
+        <ul>
+          <li><strong>Doação financeira:</strong> Via PIX ou transferência bancária (contate-nos para detalhes).</li>
+          <li><strong>Itens essenciais:</strong> Alimentos não perecíveis, roupas e materiais escolares.</li>
+          <li><strong>Tempo e habilidades:</strong> Participe como voluntário.</li>
+        </ul>
+        <p>Para doar, preencha o formulário de cadastro ou entre em contato diretamente. Toda contribuição é bem-vinda!</p>
+      </section>
+    </main>
   `,
   
   cadastro: () => `
